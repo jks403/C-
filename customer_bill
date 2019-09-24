@@ -1,0 +1,69 @@
+//
+//  main.cpp
+//  lab3#2
+//
+//  Created by Joshua Stewart on 9/14/15.
+//  Copyright (c) 2015 Joshua Stewart. All rights reserved.
+//
+
+#include <iostream>
+
+// JOshua Stewart
+// 10 september 2015
+// this code asks the user for a customer type and depending upon the
+// response, calculates a certain bill based on an hourly rate for electricity
+
+#include<iostream>
+#include <iostream>
+using namespace std;
+int main()
+{
+    char customer_response;
+    float hours_used;
+    float customer_bill;
+    cout << "Enter customer type (ending with letter x) ";
+    cin >> customer_response ;
+    cout << "enter in hours used";
+    cin >> hours_used;
+    while (customer_response != 'z')
+    { switch (customer_response)
+        { case 'R':   customer_bill = 6.00 + (.12*hours_used);
+                cout << "your residential bill is $ " << customer_bill ;
+                break;
+                
+            case 'c':
+            case 'C' : if ( hours_used > 1000)
+            {
+                customer_bill = 75.00 + (hours_used - 1000 )* (.08) ;
+                cout<< " your commercial bill is $ " << customer_bill;
+            }
+            else{
+                
+                customer_bill = 75.00 ;
+                cout << " your commercial bill is $ " << customer_bill;
+            }
+                break;
+            case 'i':
+            case 'I': if ( hours_used > 2000 )
+            {
+              	customer_bill = 120.00 + (hours_used - 2000) * (.05);
+              	cout<< "your industry bill is $ "<< customer_bill;
+            }
+            else{
+                customer_bill = 120.00;
+                cout << " your industry bill is $ " << customer_bill;
+            }
+                break;
+            case 'g':
+            case 'G': customer_bill = .06 * hours_used;
+                cout << " your government bill is $ " << customer_bill;
+                break;
+            default : cout<<"Illegal entry"<<endl;
+        }
+        cout << "Enter customer type (ending with letter x) ";
+        cin >> customer_response ; 
+        cout << "enter in hours used";
+        cin >> hours_used;
+        
+    }
+}
