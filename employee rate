@@ -1,0 +1,38 @@
+//
+//  // Thursday, September 3rd, 2015
+//JOshua Stewart
+// CS 112
+// Lab 2
+// This lab accepts a pay rate by the user and hours worked input by the user
+// the probram multiplies the amount of hours and pay rates and outputs the
+// salary for that person
+# include <iostream>
+using namespace std;
+int main()
+{
+	float employee_number = 0;
+	float employee_wage;
+	float employee_salary;
+	const int loopcount = 3;
+	int i = 1 , employee_hours;
+	cout.setf(ios::fixed);
+	cout.precision(2);
+	for ( i=1; i <=loopcount; i++)
+    {
+	    cout << "enter employee number " << i << endl;
+	   	cout << "enter wage: " << endl ;
+	   	cout << "Enter hours: " << endl ;
+	   	cin  >> employee_wage >> employee_hours;
+	   	if (employee_hours > 40)
+		{
+	   	    employee_salary = 40*employee_wage + ((employee_hours - 40)* (1.5* employee_wage));
+	   	   	cout << " The employee's "<< employee_number << " salary is " << employee_salary<<endl;
+        }
+        else
+		{
+            employee_salary = (employee_hours * employee_wage);
+            cout << " The employee's "<< employee_number << " salary is " << employee_salary<<endl;
+        }
+    }
+    
+}
