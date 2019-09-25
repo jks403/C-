@@ -1,0 +1,95 @@
+//
+//  /  main.cpp
+//  lab4#1.A
+//
+//
+#include <iostream>
+
+//
+//
+// This experiment uses three different functions... one for input one for sorting data
+// and one for returning the sorted values from least to greatest
+
+using namespace std;
+
+int input_function()// this is the input function
+{int user_first_value; // declarations
+    
+    cout<< " Enter in a value to sort  : " << endl;
+    cin >> user_first_value;
+    return(user_first_value);// returning a value to the calling function
+}
+
+// swap function
+void swap(int &num_1, int &num_2, int &num_3, int&num_4) // swap two integers passing by reference
+// changes the source
+{
+    int temp;
+    cout << "Swapping two integers num1=" << num_1 << " num_2=" << num_2 << endl;
+    temp = num_1;
+    num_1 = num_2;
+    num_2 = temp;
+}
+// now this input function has values to sort
+
+
+
+void sort_function ( int &num_1, int &num_2, int &num_3, int &num_4)
+// start with number 4 compare it to number 1
+{
+    
+    if (num_4<  num_1)
+    {
+        swap(num_4, num_1);
+    }
+    if (num_4< num_2)
+    {
+        swap(num_4,num_2);
+    }
+    
+    if (num_4< num_3)
+    {
+        swap(num_4, num_3);
+    }
+    if ( num_3 < num_2)
+    {
+        swap(num_3, num_2);
+    }
+    if (num_3 < num_1)
+    {
+        swap(num_3, num_1);
+        
+    }
+    if ( num_2 < num_1)
+    {
+        swap(num_2, num_1);
+    }
+}
+
+
+void output_function ( int num_1, int num_2,int num_3, int num_4) // what are we doing here?
+{
+    cout << "num_1 = " << num_1<< endl;
+    cout << "num_2 = " << num_2 << endl;
+    cout << "num_3 = " << num_3<< endl;
+    cout << "num_4 = " << num_4<< endl;
+}
+
+
+
+int main()
+{
+    int num_1, num_2, num_3, num_4;
+    num_1 = input_function();
+    num_2 = input_function();
+    num_3 = input_function();
+    num_4 = input_function();
+    cout << " Your list before sorting :" << num_1<< " "<< num_2 << " " << num_3 << " " <<  num_4<< endl;
+    sort_function(num_1, num_2, num_3, num_4);
+    output_function(num_1, num_2, num_3, num_4);
+    cout << " Your list after sorting is as follows : " << num_1 << ' '<<  num_2 <<' ' <<  num_3<< ' ' << num_4 << endl;
+    
+    
+    
+}
+
