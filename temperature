@@ -1,0 +1,41 @@
+// Joshua Stewart Lab 2
+// Septermber 3
+// this program accepts fahrenheit or celsius temps and converts the input to the opposite temperature in the opposite system
+
+#include <iostream>
+using namespace std;
+int main()
+
+{
+	float celsius, fahr;
+	float new_temp,degrees;
+	char response, answer;
+	do
+	{
+        cout << " Enter in either F or f for fahrenheit or C or c for celsius " ;
+        cin >> response;
+        if ( response == 'F' || response =='f')
+        {
+            cout << " enter in your temperature " ;
+            cin  >> degrees;
+            new_temp = ((degrees - 32) / 1.8);
+            cout << " your new temperature is : " << new_temp;
+        }
+	    
+		else if  ( response == 'C' || response == 'c')
+        {
+            cout << " enter in your temperature " ;
+            cin>> degrees;
+            new_temp = ((degrees * 1.8) + 32);
+            cout << new_temp;
+        }
+        else
+	    {
+            cout << " your response is invalid... try again either C or F " << endl;
+		}
+	    
+		cout << " do you want another temperature converted? y or n ? ";
+		cin >> answer ; 
+        
+    } while ( answer == 'Y' || answer== 'y' );
+}
