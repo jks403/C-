@@ -1,0 +1,145 @@
+#include <iostream>
+#include <iomanip>
+
+using namespace std;
+
+int
+dec_num ( char character);
+bool
+test_legal(char value);
+
+int
+main ( )
+{
+     char val1, val2, val3;
+     cout<< " please enter a value to be converted to decimal form... Input A* to exit"<< endl;
+     cin >> val1;
+
+     while( val1!='*')
+     {
+         cin >> val2 >> val3;
+
+         if ((test_legal(val1)== false) || (test_legal(val2)== false) || (test_legal(val3)==false))
+         {
+             cout<< "invalid input:" << endl;
+
+             cout<< " please enter a value to be converted to decimal form... Input A* to exit"<< endl;
+             cin >> val1;
+
+         }
+          else
+          {
+              int  newnum1 = (dec_num(val1));
+              int newnum2 = (dec_num(val2));
+              int newnum3 = (dec_num(val3));
+              int total   = ((newnum1*256)+ (newnum2*16)+(newnum3));
+              cout<< "your value in decimal form is:" << total << "." <<endl << endl;
+              cout<< " please enter a value to be converted to decimal form... Input A* to exit"<< endl;
+              cin >> val1;
+
+          }
+
+
+     }
+     return 0;
+}
+
+
+
+bool
+test_legal( char value)
+{
+    switch (value)
+    {
+        case'A':
+        case'a':
+        case'B':
+        case'b':
+        case'C':
+        case'c':
+        case'D':
+        case'd':
+        case'E':
+        case'e':
+        case'F':
+        case'f':
+        case'0':
+        case'1':
+        case'2':
+        case'3':
+        case'4':
+        case'5':
+        case'6':
+        case'7':
+        case'8':
+        case'9': return true;
+                 break;
+        default: return false;
+                 break;
+    }
+}
+
+
+int
+dec_num( char character)
+{
+    int newnum;
+    switch( character)
+    {
+
+        case'A':
+        case'a': newnum = 10;
+                 break;
+        case'B':
+        case'b': newnum = 11;
+                 break;
+        case'C':
+        case'c': newnum = 12;
+                 break;
+        case'D':
+        case'd': newnum = 13;
+                 break;
+        case'E':
+        case'e': newnum = 14;
+                 break;
+        case'F':
+        case'f': newnum = 15;
+                 break;
+
+        case'0': newnum =  0;
+                 break;
+
+        case'1': newnum =  1;
+                 break;
+
+        case'2': newnum =  2;
+                 break;
+
+        case'3': newnum =  3;
+                 break;
+
+        case'4': newnum =  4;
+                 break;
+
+        case'5': newnum =  5;
+                 break;
+
+        case'6': newnum =  6;
+                 break;
+
+        case'7': newnum =  7;
+                 break;
+
+        case'8': newnum =  8;
+                 break;
+
+        case'9': newnum =  9;
+                 break;
+
+    }
+    return newnum;
+
+
+
+}
+
