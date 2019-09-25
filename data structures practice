@@ -1,0 +1,33 @@
+//
+#include <iostream>
+#include <string>
+using namespace std;
+struct Person // declare our person structure
+{ int age; // declare a member age
+    double weight; // declare a member weight
+    string name; // declare a member name
+}; // must end with semicolon just like a class definition
+int main()
+{ Person *person_ptr = new Person; // declare point to a person structure and point to new memory space that holds a person structure
+    int *age_ptr = new int; // declare pointer to a integer and point to new memory space that holds a integer
+    double *weight_ptr = new double; // declare pointer to a double and point to new memory space that holds a double
+    *age_ptr = 62; // assign value to our non structure newly allocated memory stored at age_ptr
+    *weight_ptr = 175; // assign value to our non structure newly allocated memory stored at weight_ptr
+    
+    cout << "age memory address is " << age_ptr << endl; // print out the memory address of age
+    cout << "The value at that address " << *age_ptr << endl << endl; // print the value at that address, which is age
+    
+    cout << "weight memory address is " << weight_ptr << endl; // print out the memory address of weight
+    cout << "The value at that address " << *weight_ptr << endl << endl; // print the value at that address, which is weight
+    
+    
+    // when using complex data structures like structures or classes use -> to access members of each
+    person_ptr->age = 88; // assign value to our person structure member age
+    person_ptr->weight = 243; // assign value to our person structure member weight
+    person_ptr->name = "Michael Bradley"; // assign value to our person structure member name
+    cout << "per1 memory address is " << person_ptr << endl; // print out the memory address of per1
+    cout << "The age member " << person_ptr->age << endl; // print the value of age person member
+    cout << "The weight member " << person_ptr->weight << endl; // print the value of weight person member
+    cout << "The name member " << person_ptr->name << endl; // print the value of name person member
+    
+}
