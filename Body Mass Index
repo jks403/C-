@@ -1,0 +1,157 @@
+//
+//  main.cpp
+//  lab9
+//
+//  Created by Joshua Stewart on 10/28/15.
+//  Copyright (c) 2015 Joshua Stewart. All rights reserved.
+//
+
+#include <iostream>
+#include <cmath>
+#include <iomanip>
+#include <string>
+#include <vector>
+using namespace std;
+
+class Person
+{
+protected:
+    float id_num, feet, inches, weight;
+    string name;
+public:
+    void store_name(string);
+    string return_name();
+    void store_id_num(float);
+    float Return_ID_num();
+    void store_feet(float);
+    float return_feet();
+    void store_inches(float);
+    float return_inches();
+    void store_weight(float);
+    float return_weight();
+    float calc_bmi();
+    char classify_bmi();
+    
+};
+
+void Person::store_name(string name_in)
+{
+    name = name_in;
+}
+
+string Person:: return_name()
+{
+    return name;
+}
+
+void Person:: store_id_num(float id_num_in)
+{
+    id_num = id_num_in;
+}
+
+float Person::Return_ID_num()
+{
+    return id_num;
+}
+
+
+void Person::store_feet(float feet_in)
+{
+    feet = feet_in;
+}
+
+float Person:: return_feet()
+{
+    return feet;
+}
+
+
+
+void Person::store_inches(float inches_in)
+{
+    inches = inches_in;
+}
+float Person:: return_inches()
+{
+    return inches;
+}
+
+void Person::store_weight(float weight_in)
+{
+    weight = weight_in;
+}
+float Person:: return_weight()
+{
+    return weight;
+}
+
+
+float Person:: calc_bmi()
+{float bmi;
+    bmi = ((weight * 703)/((feet*12+inches)*(feet*12+inches)));// converts feet to inches so inches ^ 2 in denominator
+    return bmi;
+}
+
+bool person_compare(Person &Person1, Person &Person2)
+{ 
+    if (Person1.return_name()< Person2.return_name())
+    {
+    return true;
+    }
+    else
+    {
+        return false;
+    }
+}
+
+
+
+
+
+int main()
+{
+    string user_name;
+    vector <Person> allperson; //  vector holding a Class called "Person" " allperson" is vector name
+    float id_num=0, feet, inches, pounds;
+    int person_count=0;
+    cout << " enter in id num :"<< endl;
+    cin >> id_num ;
+    
+do{
+    cout<< " enter in name all capitals:" << endl;
+    cin.clear();
+    cin.ignore(numeric_limits<streamsize>::max(),'\n');
+    getline(cin,user_name);
+    allperson.push_back(Person());
+    allperson[person_count].store_name(user_name);
+    allperson[person_count].store_id_num(id_num);
+        
+    cout << " Enter in the height in feet and inches and pounds : " << endl;
+    cin  >> feet >> inches >> pounds;
+    allperson[person_count].store_feet(feet);
+    allperson[person_count].store_inches(inches);
+    allperson[person_count].store_weight(pounds);
+    cout << " Enter in another employee number or -1 to quit" << endl;
+    cin >>  id_num ;
+    person_count++;
+    }
+    while (id_num != -1);
+
+    
+    cout << " you entered in -1 good bye "<< endl;;
+    sort(allperson.begin(),allperson.end(),person_compare); // sort all people based on true or false
+    
+    for (person_count = 0 ; person_count < allperson.size();person_count++)
+    {
+        cout<< "person #: "<< allperson[person_count].Return_ID_num()<< endl;
+        cout << " your name is: " <<  allperson[person_count].return_name()<< endl;
+        cout << " your feet are : "<< allperson[person_count].return_feet()<< endl;
+        cout << " your inches are : " << allperson[person_count].return_inches() << endl;
+        cout << " your weight is : " << allperson[person_count].return_weight() << endl;
+        cout << " your Bmi is : " << allperson[person_count].calc_bmi() << endl;
+            
+
+    }
+        
+}
+
