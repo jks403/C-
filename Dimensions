@@ -1,0 +1,99 @@
+//
+//  main.cpp
+//  lab7
+//
+//  Created by Joshua Stewart on 10/15/15.
+//  Copyright (c) 2015 Joshua Stewart. All rights reserved.
+//The purpose of this lab is to create a code that uses inheritance to find dimensions of shapes such as squares, rectangles, and spheres based on a user's entry of a radius, or side lengths.
+// The experiment is an exercise in using the switch / case statement to allow the user to choose a different shape and find the dimensions of the shape
+// the lab also exercises the student's skill in using a while loop to continue prompting the user which allows the user to choose more shapes and therefore more dimensions.
+// The experiment uses a base class called Circle and methods for Circle and thereafter allows the children classes to inherit the methods from the base class.
+#include <iostream>
+#include "shape_class.cpp"
+#include "circle_class.cpp"
+#include "sphere_class.cpp"
+#include "rectangle_class.cpp"
+#include "square_class.cpp"
+#include "cylinder_class.cpp"
+#include "triangle_class.cpp"
+using namespace std;
+
+void print_shape_info(Shape &shape)// can accept any derived shape. This function evaluates the user input  in the Case
+// or switch statement. Depending on what shape the user inputs, the program calls the print_shape info function
+{
+	cout << " The " << shape.return_what_shape() << endl;
+	if ( shape.calc_volume() > 0) // checking for a volueme
+		cout << " has a volume of "  << shape.calc_volume () << endl; 
+	if ( shape.calc_perimeter() > 0)
+		cout << " has perimeter of " << shape.calc_perimeter () << endl;
+	cout << " and has an area of " << shape.calc_area () << endl << endl;
+}
+
+int main()
+{
+    char   shape_type ='0'   ;
+    float radius, length, width, leg_1, leg_2, leg_3;
+    Circle my_circle;
+    Sphere my_sphere;
+    Rectangle my_rectangle;
+    Square my_square;
+    Cylinder my_cylinder;
+    Triangle my_triangle;
+
+    while ( tolower(shape_type) !='q')
+
+    {
+    cout<< " What kind of shape do you want to find out about? " << endl;
+        cout<< " Enter c for circle, p if sphere,\n r if rectangle \n s if square, y if cylinder, t if triangle \n or q to exit " << endl;
+    cin >> shape_type;
+    switch (tolower(shape_type))
+        {
+            case 'c':
+            cout << "enter in a radius for your circle"<< endl;
+            cin  >> radius;
+            my_circle.store_radius(radius);
+                print_shape_info(my_circle);
+            break;
+            case 'p':
+            cout << "enter in a radius for your sphere"<< endl;
+            cin  >> radius;
+            my_sphere.store_radius(radius);
+            print_shape_info(my_sphere);
+            break;
+            case 'r':
+            cout << "enter in a length and width for rectangle"<< endl;
+            cin  >> length >> width;
+            my_rectangle.store_sides(length , width);
+                print_shape_info(my_rectangle);
+            break;
+            case 's':
+            cout << "enter in a side and for square"<< endl;
+            cin  >> length;
+            my_square.store_side(length);
+
+            print_shape_info(my_square);
+            
+            case 'y':
+            	cout << " enter in a radius length and a length of the cylinder " << endl;
+            	cin >> radius >> length ;
+                my_cylinder.store_radius(radius);
+                my_cylinder.store_length(length);
+                cout<< " your radius is of length " << my_cylinder.return_radius()<< endl;
+                cout << " your length is of length" << my_cylinder.return_length()<< endl;
+                print_shape_info(my_cylinder);
+                break;
+            case 't':
+            	cout << " enter in your triangle legs" ;
+                cin >> leg_1 >> leg_2 >> leg_3;
+                
+                my_triangle.store_legs(leg_1, leg_2, leg_3 );
+                print_shape_info(my_triangle);
+            break;
+            case 'q':
+            cout << " you entered q for quit  Good bye" << endl;
+            break;
+        }
+    }
+
+
+}
