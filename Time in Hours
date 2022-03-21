@@ -1,0 +1,22 @@
+
+/* this is a program that allows the user to enter a time in seconds and then outputs how many hours 
+the seconds equates to. 
+*/
+
+#include<iostream>
+#include <cmath>
+using namespace std;
+int main()
+{
+    cout.setf(ios::fixed);
+    cout.setf(ios::showpoint);
+    cout.precision(2);
+ double totalseconds;
+ double seconds, hours, minutes;
+ cout << "Enter in the totalseconds\n";
+ cin  >> totalseconds;
+ hours = totalseconds*(1/60.0)*(1/60.0);
+ cout << "The hours from " << totalseconds << " Is " << hours;
+ return 0;   
+
+}
