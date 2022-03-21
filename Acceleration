@@ -1,7 +1,7 @@
-// this is a program that allows the user to enter a time in seconds and then outputs how far an object will drop if it is in freefall for that lenght of time. 
+/* this is a program that allows the user to enter a time in seconds and then outputs how far an object will drop if it is in freefall for that lenght of time. 
 Assume no friction or resistance from air and a constant acceleration of 32 feet per second due to gravity
 use the equation Distance = 1/2 * acceleration * time * time
-//
+*/
 
 #include<iostream>
 #include <cmath>
@@ -18,9 +18,4 @@ int main()
  
  return 0;   
 
-   
-    
-    
-    
-    
 }
