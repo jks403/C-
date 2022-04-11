@@ -1,0 +1,16 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+float previous_salary, previous_monthly_salary, final_salary, final_monthly_salary, retroactive;
+cout << "what is your annual salary \n";
+cin >> previous_monthly_salary;
+cout << "Your previous monthly is " << previous_monthly_salary/12 << "\n";
+previous_monthly_salary = previous_salary/12;
+final_salary = (previous_salary * 0.076) + previous_salary;
+retroactive = (previous_salary * 0.076) * 6;
+cout << " Your retroactive is " << retroactive << "\n";
+cout << "\n";
+cout << " The monthly is << (previous_monthly_salary *0.076) + previous_monthly_salary << "\n";
+return 0;
+}
