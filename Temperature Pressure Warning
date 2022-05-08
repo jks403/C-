@@ -1,0 +1,22 @@
+//This program outputs the word Warning provided that
+//either the value of the variable temperature is greater than or equal to 100 ,
+//or the value of the variable pressure is greater than or equal to 200 , or
+//both. Otherwise, the if-else statement outputs the word OK . The variables
+//temperature and pressure are both of type int .
+#include <iostream>
+ #include <string>
+ using namespace std;
+ int main()
+
+ {
+     int temperature, pressure;
+     cout << "Enter in the temperature & pressure" << endl;
+     cin >> temperature >> pressure;
+     if((temperature >= 100) or (pressure>=200))
+     {
+         cout << "Warning";
+      }
+      else
+      cout << "OK";
+     
+ }
