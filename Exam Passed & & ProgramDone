@@ -1,0 +1,22 @@
+//Program to prompt the user to enter in an Exam score & ProgramDone amount
+// if Exam score is greater than 60, the program moves on to compare the programdone greater than 10
+// Both conditions need to be true
+// if ProgramDone is less than 10, the program prints out Failed, but both Booleans must evaluate to True
+ #include <iostream>
+ #include <string>
+ using namespace std;
+ int main()
+
+ {
+     int exam, programDone;
+     cout<<"enter in the examscore & programDone" << endl;
+     cin >> exam >> programDone;
+     if((exam>=60 ) && (programDone > 10))
+      {
+          cout<< "Passed";
+      }
+        else
+        cout << "Failed";
+     
+    return 0;
+ }
