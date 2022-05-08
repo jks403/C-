@@ -1,0 +1,25 @@
+//Program to prompt the user to enter in savings amount and expenses
+// if savings is greater than expenses, the program prints out solvent
+// if savings is less than expenses, the program prints out Bankrupt
+ #include <iostream>
+ #include <string>
+ using namespace std;
+ int main()
+
+ {
+     double savings, expenses;
+     cout<< "enter in savings, and expenses"<< endl;;
+     cin>> savings >> expenses;
+     if(savings>=expenses)
+       {
+           cout << "solvent" << endl;
+            savings = savings - expenses;
+            cout << "Your savings after your expenses is " << savings << endl;
+            expenses = 0;
+       }
+     else
+      cout<<"Bankrupt" << endl;
+    
+     
+    return 0;
+ }
