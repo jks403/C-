@@ -1,0 +1,22 @@
+//Program to demonstrate cin and cout with strings
+ #include <iostream>
+ #include <string>
+ using namespace std;
+ int main()
+
+ {
+     int countdown;
+     
+      cout << "How many greetings do you want" << endl;
+      cin >> countdown;
+      while(countdown > 0)
+      {
+          cout << "Hello";
+          countdown = countdown -1;
+       }
+       
+       cout << endl;
+       cout << "That's all! \n";
+      
+        return 0;
+ }
