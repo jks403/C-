@@ -1,0 +1,30 @@
+ //Program to demonstrate cin and cout with strings
+ #include <iostream>
+ #include <string>
+ using namespace std;
+ int main()
+
+ {
+     
+      int temperature;
+      string day;
+      
+      cout << "What is the temperature today" << endl;
+      cout << "What is the day today? " << endl;
+      cin >> temperature >> day;
+      if((temperature < -10) && (day == "SUNDAY"))
+         cout << "Stay Home." << endl;
+         
+       else if((temperature < -10) && (day != "SUNDAY"))
+            cout << "Stay Home, but call WORK! " << endl;
+        else if((temperature<= 0) && (temperature>= -10))
+            cout << "Dress Warm" << endl;
+        else 
+            cout << "temperature greater than zero " << endl;
+            cout << " Work Hard Play Hard" << endl;
+       
+     
+        
+        
+return 0;
+ }
