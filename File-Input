@@ -1,0 +1,25 @@
+#include <iostream>
+#include <fstream>
+#include <string>
+
+
+
+using namespace std;
+
+int main()
+{
+   string firstname, lastname, measure;
+   int score, height;
+   fstream inputstream;
+   inputstream.open("test_doc.txt");
+   inputstream >> score;
+   inputstream >> firstname >> lastname;
+   inputstream >> height;
+   inputstream >> measure;
+   cout << "Name: " << firstname<< " " << lastname << endl;
+   cout << "score:" << score << " " << endl;
+   cout << "Height units " << height<<" "<< measure << endl;
+   inputstream.close();
+   
+     return 0;
+}
