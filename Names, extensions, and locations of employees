@@ -11,9 +11,10 @@ int main()
     string firstname, lastname, location;
     input.open("Employees.txt");
     output.open("Employees2.txt");
+    output << "Firstname" << "      " << "Lastname" <<" "<<"Extension" << " " << "Location" << endl;
     while(input >>   firstname >> lastname>> extension>> location)
-    {
-        output << firstname<<" " << lastname<<" " <<  extension<<" " << location<< endl;
+    {  
+        output <<  firstname  <<"           "  << lastname   <<"    "<< extension   <<"    " << location<< endl;
     }
     input.close();
     output.close();
