@@ -1,0 +1,21 @@
+#include <iostream>
+#include<fstream>
+#include<string>
+using namespace std;
+
+int main()
+{
+    int extension;
+    fstream input;
+    ofstream output;
+    string firstname, lastname, location;
+    input.open("Employees.txt");
+    output.open("Employees2.txt");
+    while(input >>   firstname >> lastname>> extension>> location)
+    {
+        output << firstname<<" " << lastname<<" " <<  extension<<" " << location<< endl;
+    }
+    input.close();
+    output.close();
+    return 0;
+}
