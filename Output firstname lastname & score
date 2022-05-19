@@ -1,0 +1,21 @@
+#include<iostream>
+#include<fstream>
+#include<string>
+using namespace std;
+int main()
+{
+    string firstname, lastname, text;
+    int score;
+    fstream inputstream;
+    ofstream outputstream;
+    inputstream.open("player.txt");
+    outputstream.open("player2.txt");
+    while(inputstream >> firstname >> lastname >> score)
+    {
+         outputstream << "Name:" << firstname<< " " << lastname<< endl;
+        outputstream << "Score: " << score << endl;
+    }
+        inputstream.close();
+        outputstream.close();
+    return 0;
+}
