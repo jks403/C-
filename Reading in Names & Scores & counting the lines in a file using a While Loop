@@ -1,0 +1,30 @@
+#include<iostream>
+#include<fstream>
+#include<string>
+using namespace std;
+int main()
+{
+    string firstname, lastname, text;
+    int score, highscore=0, countlines = 0;
+    fstream inputstream;
+    ofstream outputstream;
+    inputstream.open("players.txt");
+    outputstream.open("player2.txt");
+    
+    while(inputstream >> firstname >> lastname >> score)
+    {
+        countlines = countlines + 1;
+          
+          if(score>=highscore)
+         {
+             highscore = score;
+             
+         }
+        outputstream << " This is the " << " " << countlines << " " << " line"<< endl;
+    }
+    outputstream <<" " <<" " << "The High score"<< "  "<<highscore<<"  Total Line count" << " " << countlines<<endl;
+    
+        inputstream.close();
+        outputstream.close();
+    return 0;
+}
