@@ -1,0 +1,36 @@
+#include<iostream>
+#include<fstream>
+#include<string>
+using namespace std;
+
+int main()
+{
+    
+    fstream inputstream;
+    ofstream outputstream;
+    string title, first, last, high_first, high_last;
+    int time_service=0, highest_time=0;
+    inputstream.open("employee.txt");//look at the file to know the user's needs of reading in the first,last, time, title
+    outputstream.open("employee2.txt");
+    outputstream<< "Firstname  " << " lastname " << " Time in service "<< "Title" <<endl;
+    outputstream<<"================================================================"<< endl;
+    while(inputstream >> first >> last >> time_service >> title)
+    {
+        if(highest_time< time_service)
+           {
+               highest_time = time_service;
+               high_first = first;
+               high_last = last;
+               title = title;
+           }
+           
+           
+    }
+    cout << "The employee with the most " << endl;
+    cout << "time in service is:" << " " << high_first<<" " << high_last<< " " << "with " << highest_time << " Years " << endl;
+    outputstream<< "The employee with the most " << endl;
+    outputstream << "time in service is:" << " " << high_first<<" " << high_last<< " " << "with " << highest_time << " Years " << endl;
+    inputstream.close();
+    outputstream.close();
+    return 0;
+}
