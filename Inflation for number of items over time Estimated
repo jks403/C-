@@ -1,0 +1,22 @@
+#include <iostream>
+#include<fstream>
+#include<string>
+
+using namespace std;
+
+int main()
+{
+    string item;
+    int   number_years_future, num_items,numyears=0;
+    float present_price,future_price,rate_inflation;
+    cout<<"what is the item, and the price and the rate of inflation and number of years " << endl;
+    cin >> item>>present_price>>rate_inflation>>number_years_future;
+    for(int i = 0; i<= number_years_future;i++)
+    {
+       
+        future_price = present_price + ((0.056)*(present_price)*(i));
+        cout << "Your future price at: " << i << " years " << " " << " is "<< future_price << " Dollars"<< endl;
+    }
+
+    return 0;
+}
