@@ -1,0 +1,43 @@
+/******************************************************************************
+
+Welcome to GDB Online.
+GDB online is an online compiler and debugger tool for C, C++, Python, PHP, Ruby, 
+C#, VB, Perl, Swift, Prolog, Javascript, Pascal, HTML, CSS, JS
+Code, Compile, Run and Debug online from anywhere in world.
+This program reads data in from a commoditiestable text file and multiplies the present price by an inflation rate & 
+number of years and produces the future price
+
+*******************************************************************************/
+#include <iostream>
+#include<fstream>
+#include<string>
+
+using namespace std;
+
+int main()
+{
+    fstream inputstream;//create inputfile variable
+    ofstream outputstream;//create outputfile variable
+    string item;
+    int   number_years_future, num_items,numyears=0, i=0;
+    float present_price,future_price,rate_inflation;
+    inputstream.open("commoditiestable.txt");
+    outputstream.open("future_price.txt");
+   // cout<<"what is the item, and the price and the rate of inflation and number of years " << endl;
+    //cin >> item>>present_price>>rate_inflation>>number_years_future;
+  //  for(int i = 0; i<= number_years_future;i++)
+    while(inputstream >> item>>present_price>>rate_inflation>>number_years_future)
+    {
+       for(int i = 0; i<= number_years_future;i++)
+        {
+             future_price = present_price + ((0.056)*(present_price)*(i));
+             cout << "Your future price for " << item<<"  at: " << i << " years " << " " << " is "<< future_price << " Dollars"<< endl;
+            
+        }
+         //cout << "Your future price for " << item<<"  at: " << i << " years " << " " << " is "<< future_price << " Dollars"<< endl;
+        // outputstream << "Your future price of " << item << " at: " << i << " years " << "  is "<< future_price << " Dollars"<< endl;
+            
+        }
+
+    return 0;
+}
