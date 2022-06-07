@@ -1,0 +1,22 @@
+#include <iostream>
+#include <fstream>
+#include <string>
+using namespace std;
+
+int main()
+{
+
+float remaining_amount = 1000.0, total_interest=0, interest=0;
+int monthly_payment=50, num_months=0;
+while(remaining_amount>=0)
+    {       
+           num_months = num_months +1;
+           remaining_amount = remaining_amount - (monthly_payment-(remaining_amount*0.015));
+           cout<< "The interest is  "<< remaining_amount*(0.015)<<"  The remaining amount is " << remaining_amount<< " Total months : " << num_months<< endl;
+           interest = 0.015*remaining_amount;
+           total_interest = 0;
+           total_interest = total_interest + interest;
+      
+     }
+    return 0;
+}
