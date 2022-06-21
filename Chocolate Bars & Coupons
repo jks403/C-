@@ -1,0 +1,32 @@
+/******************************************************************************
+
+Welcome to GDB Online.
+GDB online is an online compiler and debugger tool for C, C++, Python, PHP, Ruby, 
+C#, OCaml, VB, Perl, Swift, Prolog, Javascript, Pascal, HTML, CSS, JS
+Code, Compile, Run and Debug online from anywhere in world.
+
+*******************************************************************************/
+#include <iostream>
+#include <fstream>
+#include <string>
+using namespace std;
+int dollars, coupons_remaining, number_chocolate_bars, additional_chocolate;
+int main()
+{
+    cout << "Enter in dollar amount:";
+    cin >> dollars;
+    number_chocolate_bars = dollars;
+    
+    coupons_remaining = number_chocolate_bars;
+    while(coupons_remaining>=7)
+    {
+        additional_chocolate = coupons_remaining/7;
+        number_chocolate_bars = number_chocolate_bars+additional_chocolate;
+        coupons_remaining = (coupons_remaining%7) + additional_chocolate;
+    
+    }
+
+cout << "total number of Chocolate bars Is: " << number_chocolate_bars<< endl;
+cout << "the number left of coupons Is:" << coupons_remaining << endl;
+return 0;
+}
