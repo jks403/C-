@@ -1,0 +1,33 @@
+/******************************************************************************
+
+Welcome to GDB Online.
+GDB online is an online compiler and debugger tool for C, C++, Python, Java, PHP, Ruby, Perl,
+C#, OCaml, VB, Swift, Pascal, Fortran, Haskell, Objective-C, Assembly, HTML, CSS, JS, SQLite, Prolog.
+Code, Compile, Run and Debug online from anywhere in world.CH 1 # 12
+
+
+*******************************************************************************/
+#include <iostream>
+
+using namespace std;
+double inches, total_feet, ideal_weight;
+double  total_inches;
+int height_inches,remain_inches;
+int main()
+{
+    cout<<"enter in total inches";
+    cin >> height_inches;
+    total_feet = height_inches/12.0;
+    //remain_inches = height_inches%12;
+    remain_inches = height_inches - 60;
+    cout<< "total feet is " << total_feet<<endl;
+    cout<< " total height_inches" <<height_inches<<endl;
+    cout<< "total remainder is " << remain_inches;
+    
+if(total_feet>=5)
+{
+    ideal_weight = 110 + 5*(remain_inches);
+    cout << " your ideal weight based on " << height_inches<< " inches is " << ideal_weight;
+}
+    return 0;
+}
