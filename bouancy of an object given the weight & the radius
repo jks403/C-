@@ -13,15 +13,15 @@ using namespace std;
 int main()
 {
     double volume, radius, bouancy, weight;
-   cout<<"Enter in theand radius"<<endl;
+   cout<<"Enter in the  radius"<<endl;
    cin >> radius;
-   volume = (4/3) * 3.14*(radius*radius*radius);
-   bouancy = volume * 62.4;
+   volume = ((4 * 3.14*radius*radius*radius));
+   bouancy = (volume * 62.4)/3;
    cout << " Enter in the weight"<<endl;
    cin>> weight;
    if(bouancy>=weight)
    {
-       cout << "The bouancy is " << bouancy;
+       cout << "The bouancy is " << bouancy<<endl;
        cout << "the object will float"<< endl;
        
    }
