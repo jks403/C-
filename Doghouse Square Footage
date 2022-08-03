@@ -1,0 +1,28 @@
+#include <iostream>
+#include <cmath>
+
+
+using namespace std;
+
+int main()
+{
+    const double Cost_Per_Sq_ft = 10.50;
+    double budget, area, lengthSide, side;
+    cout<<"Enter in the amount budgeted for your doghouse $ ";
+    cin >> budget;
+    area = budget / Cost_Per_Sq_ft;
+    lengthSide = sqrt(area);
+    
+    cout.setf(ios::fixed);
+    cout.setf(ios::showpoint);
+    cout.precision(2);
+        cout<<"For a price of $" << budget << endl
+             << "I can build you a luxurious square dogouse\n" 
+             << "that is  " << lengthSide
+             << " feet on each side.\n";
+             side = sqrt(area);
+             cout << " 2.5 to the power of 3.0 is " 
+             << pow(2.5, 3.0);
+    
+    return 0;
+}
