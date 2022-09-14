@@ -1,0 +1,40 @@
+/******************************************************************************
+
+Welcome to GDB Online.
+GDB online is an online compiler and debugger tool for C, C++, Python, PHP, Ruby, 
+C#, OCaml, VB, Perl, Swift, Prolog, Javascript, Pascal, HTML, CSS, JS
+Code, Compile, Run and Debug online from anywhere in world.
+
+*******************************************************************************/
+#include <stdio.h>
+#include <iomanip>
+#include<iostream>
+using namespace std;
+
+int main()
+{
+    int charles_val, eth_val, ed_jon_val, retire_year, count = 1, yearly_add, total_present, yearly_growth;
+    int tim, new_present, present_age,  present_w_interest, end_of_year_total;
+    float growth_percent, total_retirement, ether_price,ether_tokens;
+    cout<<"enter in Charles, ether_tokens, ether_price, ed_jon_val, retire_year,present_age,  yearly_add, growth_percent"<<endl<<endl;
+    cin>>charles_val>>ether_tokens>>ether_price>> ed_jon_val>>retire_year>>present_age >> yearly_add>> growth_percent;
+    
+    total_present = charles_val + (ether_tokens*ether_price) + ed_jon_val;
+    cout << "total present val is: " << total_present<<endl<<endl;
+    /////////////////////////////////////////////////////////////
+   
+    new_present = total_present + present_w_interest;
+    tim = retire_year - present_age;
+    while(count <= tim)
+    {  
+        present_w_interest = total_present + (total_present*.20);
+        total_present = total_present + present_w_interest;
+        cout << present_w_interest << "your present value with interest" << endl<< endl;
+        end_of_year_total = total_present  + present_w_interest;   
+        cout << "your new present after year " << count << " is " << " " << end_of_year_total<<endl;
+        count ++;
+    }
+    
+
+    return 0;
+}
