@@ -1,8 +1,5 @@
 <?php
 require_once('../db_config.php');
-
-
-
 if(!isset($_POST['updateRecord'])){
     header('Location: edit.php');
     die();
