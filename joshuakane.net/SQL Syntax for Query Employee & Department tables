@@ -16,3 +16,22 @@ SELECT empl.empl_id,  department.dept_name
 FROM empl
 JOIN department
 ON empl.dept_name = department.dept_name;
+
+=====================================
+SELECT empl.empl_id, empl_name, start_date,  department.dept_name 
+FROM empl
+JOIN department
+ON empl.dept_name = department.dept_name;
+========================================
+
+Select empl_name, department.dept_name
+from empl
+WHERE dept_name = 'patient_services';
+
+========================================
+
+Select empl_id, empl_name, department.dept_name
+from empl
+JOIN department
+ON empl.dept_name = department.dept_name
+WHERE empl.dept_name = 'information_technology';
