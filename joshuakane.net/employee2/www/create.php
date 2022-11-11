@@ -3,14 +3,13 @@ require_once('../db_config.php');
 
 if(isset($_POST['addRecord'])){
     
-     
-     $height = filter_var($_POST['height'], FILTER_SANITIZE_NUMBER_INT);
-     $title = filter_var($_POST['title'], FILTER_SANITIZE_STRING);
-     $author = filter_var($_POST['author'], FILTER_SANITIZE_STRING);
-     $genre = filter_var($_POST['genre'], FILTER_SANITIZE_DATE);
-     $publisher = filter_var($_POST['publisher'], FILTER_SANITIZE_DATE);
-     $query = "INSERT into books (title, author,genre, height, publisher)
-               VALUES(:title, :author,:genre, :height,:publisher)";  
+     $title = filter_var($_POST['title']);
+     $author = filter_var($_POST['author']);
+     $genre = filter_var($_POST['genre']);
+     $height = filter_var($_POST['height']);
+     $publisher = filter_var($_POST['publisher']);     
+     $query = "INSERT INTO  books ( title, author, genre, height, publisher)
+                VALUES (:title, :author, :genre, :height, :publisher)";      // passed in from the create.php script URL
     $result = $db_conn -> prepare($query);
     $result ->execute([
                          'title'       =>  $title,
@@ -18,38 +17,89 @@ if(isset($_POST['addRecord'])){
                          'genre'       =>  $genre,
                          'height'      =>  $height,
                          'publisher'   =>  $publisher,
-                         
+                        
                         
                         ]);
- }
-
+                        
+                      
+                        
+                 }
+                 
 
 ?>
 
 
 <!DOCTYPE html>
   <html lang="en">
+      
+      <!-- joshuakane.net/books/www/create.php ---- this will allow the user to send the form data to itself the php code at the top --> 
+      <!-- it checks if the user pressed the add Record button...  if so, the algorithm asssigns all the user's text to the PHP variables -->
+      <!-- $title,   $author $ genre  $height  $publisher--- and adds the Query to the database inserting into the table -->
+      <!-- finaly, resulting === $database connection with the Homer username & d0ughnut password and preparign the query since we used -->
+      <!-- we had to use the :title   :author,   :genre  : height :publisher as placeholders so therefore we had to prepare the query -->
+      <!-- next we executed the result Execute the ([ Array    'title'   => -->
+      <!-- 'author' =>   $author php variable-->
+      <!-- 'genre ' =>   $genrre php variable -->
+      <!-- 'height' =>   $height php variable  all was sent up from the form at the bottom  Form method = post action = " " sending to itself. --> 
+
 
   <head>
     <meta charset="UTF-8">
-    <title>Edit a Record</title>
+    <title>Add a Record</title>
+     <style type="text/css">
+                     
+                     body {
+                         background-image: url("books.jpg");
+                         background-position: bottom left;
+                         background-repeat: repeat-x;
+                         background-size: 3600px;
+                          }
+                     
+                      p {
+                             color: white; 
+                             text-align: center;
+                             text-size: 500px;
+                             
+                         }
+                     
+                     
+                     label {
+                         Background-color: beige;
+                         height: 100px;
+                         width: 100px;
+                         text-align: center;
+                           
+                         }
+                         
+     </style>
+    
+    
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
   </head>
-
-  <body>
-
-    <br>
+   <body>
+       <br>
+       <br>
+       <br>
+       <br>
+       
+ <p> Add a Book to the database! </p> 
+       <br>
+       <br>
+       <br>
+       <br>
+    
     <div class="container">
-      <form method="post" action="addRecord">
+      <form method="post" action=""> <!-- WE must send the all of the form information here to itself to the top of the code-->   
         
         <div class="form-group row">
-          <label for="Title" class="col-sm-2 col-form-label">Title</label>
+          <label for="title" class="col-sm-2 col-form-label">Title</label>   <!-- sending the title to the top of this code --> 
           <div class="col-sm-10">
-            <input type="text" class="form-control" id="Title" name="emp_name" value="">
+            <input type="text" class="form-control" id="title" name="title" value="">
           </div>
         </div>
-        <div class="form-group row">
-          <label for="Author" class="col-sm-2 col-form-label">Author</label>
+        
+          <div class="form-group row">
+          <label for="author" class="col-sm-2 col-form-label">Author</label>
           <div class="col-sm-10">
             <input type="text" class="form-control" id="author" name="author" value="">
           </div>
@@ -60,12 +110,14 @@ if(isset($_POST['addRecord'])){
             <input type="text" class="form-control" id="genre" name="genre" value="">
           </div>
         </div>
+        
         <div class="form-group row">
           <label for="height" class="col-sm-2 col-form-label">height</label>
           <div class="col-sm-10">
             <input type="number" class="form-control" id="height" name="height" value="">
           </div>
         </div>
+        
         <div class="form-group row">
           <label for="publisher" class="col-sm-2 col-form-label">publisher </label>
           <div class="col-sm-10">
@@ -73,13 +125,21 @@ if(isset($_POST['addRecord'])){
           </div>
         </div>
 
-        <button type="submit" name="addRecord" class="btn btn-success">add Record</button>
+        <button type="submit" name="addRecord" class="btn btn-success">Add Record</button>
 
       </form>
     </div>
-
-
-  </body>
+ 
+  
+    
+   
+    </body>
+    <br>
+    <br>
+    
 
 
   </html>
+
+
+
