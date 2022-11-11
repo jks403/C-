@@ -1,0 +1,4 @@
+SELECT employee.employee_lname, employee.employee_phone, dept.dept_name 
+FROM employee
+JOIN dept
+ON employee.dept_name = dept.dept_name;
