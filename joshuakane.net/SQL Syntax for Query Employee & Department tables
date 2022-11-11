@@ -9,3 +9,10 @@ SELECT empl.emplname, empl.empl_id, department.dept_name
 FROM empl
 INNER JOIN department
 ON empl.dept_name = department.dept_name;
+
+
+=============================
+SELECT empl.empl_id,  department.dept_name 
+FROM empl
+JOIN department
+ON empl.dept_name = department.dept_name;
