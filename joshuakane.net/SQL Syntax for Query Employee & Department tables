@@ -30,8 +30,10 @@ WHERE dept_name = 'patient_services';
 
 ========================================
 
-Select empl_id, empl_name, department.dept_name
-from empl
-JOIN department
-ON empl.dept_name = department.dept_name
-WHERE empl.dept_name = 'information_technology';
+Select empl_id, empl_name, start_date, department.dept_no, department.dept_name 
+            from empl 
+            INNER JOIN department
+            ON empl.dept_name = department.dept_name 
+            WHERE empl.dept_name = 'information_technology'"       // this selects the employee id , start date, department dept number from a different table...
+                                                                   // and the department name from the department table and combines them by an INNER JOIN on the 
+                                                                   // Empl table with the dept_name as the foreign key combining them 
