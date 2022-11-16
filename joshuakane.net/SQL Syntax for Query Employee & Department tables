@@ -37,3 +37,16 @@ Select empl_id, empl_name, start_date, department.dept_no, department.dept_name
             WHERE empl.dept_name = 'information_technology'"       // this selects the employee id , start date, department dept number from a different table...
                                                                    // and the department name from the department table and combines them by an INNER JOIN on the 
                                                                    // Empl table with the dept_name as the foreign key combining them 
+                                                                   
+                                                                   
+                                                                   
+====================================================
+
+SELECT location.loc_name, location.loc_county, empl.empl_name, empl.dept_name  // Selects all fields table1.field1, table1.field2, table1.field3, table2.field3
+                                                                               //  FROM   table1
+                                                                               // INNER JOIN table2
+                                                                               //  ON   table1.loc_name  = table2.loc_name 
+FROM location 
+INNER JOIN empl
+ON location.loc_name = empl.loc_name 
+Where empl.loc_name = 'eureka' OR empl.loc_name = 'redding' or empl.loc_name = 'redding'
