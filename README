@@ -1,0 +1,39 @@
+# Pentechs-repo
+Team project repository for Pentechs.
+
+TO RUN:
+sharon Tuttle will have to clone our github repository and all the files therein. She will have to copy the 
+clone url: https://github.com/hsu-cs458-f17/Pentechs-repo.git
+Clone url should be put under public_html file in nrs-projects and be call as in the example bellow.
+http://nrs-projects.humboldt.edu/~yourusername/Pentechs-repo/code/login.php, and paste it into her browser. Before the link will work, 
+Sharon will need to run the trans_design.sql and trans_pop.sql to create her own tables in her own database to ensure her database will work. 
+
+current working directory: http://nrs-projects.humboldt.edu/~tdy18/Pentechs-repo/code/login.php
+
+in index.php user, username=dyang password=yang3
+
+The list of files/ directories include: trans_func.php, home.php, contact.php, about.php, find.php, hsu_conn.php
+and translator.css
+
+trans_func.php. is a file containing a function 
+that enables the user to connect to the database, select languages
+from the language table at the data layer, and populate the 
+dropdown menu for the client. 
+
+signout.php contain code that unset session variable.
+
+login.php contains login that give access to datatbase.
+
+index.php login and tab for find.php,contact.php, and about.php access. 
+
+contact.php. should have pentechs e-mail information, pentechs contact information. 
+
+about.php should contain a summary of what the website is about. For example, it will describe to the user the "what" of the project and not necessarily the "how" of what the website does. 
+
+find.php helps the user find a translator nearest him or her. By entering in a city, or state, he who wants a translator in close proximity can find one. 
+
+hsu_conn.php this file helps the user enter in his or her user-name and password and the function stores the data in a super global array variable for access to the nrs-project server. 
+
+translator.css uses css to cascade style the fonts, colors, text size of the webpage. 
+
+account.php contain functions and features that would be the translator or client's profile.
