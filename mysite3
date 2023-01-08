@@ -15,7 +15,7 @@
     <div class="top-container">
         <img class="top-cloud"src="css/images/cloud.png" alt="coud-img">
         <h1> I'm Joshua </h1>
-        <p>a <span class="pro">pro</span>grammer</p>
+        <p>a <span class="pro">pro</span>grammer</p>   <!-- use the  span tag as a container to group inline elements together so you can style or manipulate    --> 
         
         <img class="bottom-cloud"src="css/images/cloud.png" alt="coud-img">
         <img src="css/images/mountain.png" alt="mountain">
