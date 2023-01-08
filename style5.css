@@ -1,0 +1,212 @@
+container{
+
+    position:relative;
+    height:300px;
+    width:300px;
+    background-color: grey;
+}
+
+div{
+    height:600px;
+    
+    background-color: #B5D5C5;
+}
+body{
+    margin:0px;
+    text-align:center;
+    font-family: 'Merriweather', serif;
+
+}
+h1{
+    line-height:2;
+    color:#66BFBF;
+    font-family:'Sacramento', cursive;
+    margin-top:50px auto 0 auto;
+}
+h2{
+    color:#66BFBF;
+    font-weight:normal;
+    font-family:'Montserrat', serif;
+    margin-top:0;
+    font-size:2.5rem;
+}
+
+h3{
+    color:#11999E;
+    font-family:'Montserrat', serif;
+    margin-top:0;
+}
+
+.top-container{
+  
+    
+        /* lesson 43 12 minutes in border, padding, margin */
+}
+
+.middle-container{
+   
+}
+
+.bottom-container{
+    height:200px;
+    width:200px;
+   
+      /* lesson 43 12 minutes in border, padding, margin */
+
+}
+.pro{
+    text-decoration: underline;
+}
+.bottom-cloud{
+    position:absolute;
+    left:300px;
+    bottom:400px;
+
+}
+.top-cloud{
+    position:absolute;
+    right:300px;
+    top:50px;
+}
+.bss{
+  
+    border:solid;
+    border-radius: 50px;
+    height:300px;
+    width:300px;   
+    position:absolute;
+    left:10px;
+}
+.wat_dis{
+    border:solid;
+    border-radius: 150px;
+    height:300px;
+    width:300px;   
+    position:absolute;
+    left:310px;
+}
+.riv{
+   border:solid;         container{
+
+    position:relative;
+    height:300px;
+    width:300px;
+    background-color: grey;
+}
+
+div{
+    height:600px;
+    
+    background-color: #B5D5C5;
+}
+body{
+    margin:0px;
+    text-align:center;
+    font-family: 'Merriweather', serif;
+
+}
+h1{
+    line-height:2;
+    color:#66BFBF;
+    font-family:'Sacramento', cursive;
+    margin-top:50px auto 0 auto;
+}
+h2{
+    color:#66BFBF;
+    font-weight:normal;
+    font-family:'Montserrat', serif;
+    margin-top:0;
+    font-size:2.5rem;
+}
+
+h3{
+    color:#11999E;
+    font-family:'Montserrat', serif;
+    margin-top:0;
+}
+
+.top-container{
+  
+    
+        /* lesson 43 12 minutes in border, padding, margin */
+}
+
+.middle-container{
+   
+}
+
+.bottom-container{
+    height:200px;
+    width:200px;
+   
+      /* lesson 43 12 minutes in border, padding, margin */
+
+}
+.pro{
+    text-decoration: underline;
+}
+.bottom-cloud{
+    position:absolute;
+    left:300px;
+    bottom:400px;
+
+}
+.top-cloud{
+    position:absolute;
+    right:300px;
+    top:50px;
+}
+.bss{
+  
+    border:solid;                 <!--makes a solid border around the .bss image          --> 
+    border-radius: 50px;
+    height:300px;
+    width:300px;   
+    position:absolute;
+    left:10px;
+}
+.wat_dis{
+    border:solid;
+    border-radius: 150px;
+    height:300px;
+    width:300px;   
+    position:absolute;
+    left:310px;
+}
+.riv{                          
+   border:solid;
+   border-radius:300px;
+    height:300px;
+    width:300px;
+    position:absolute;
+    left:610px;                 <!-- left all the way to the right.. from the left 610 px           --> 
+}
+.pappa{
+    
+    border-radius:300px;          <!-- border radius same equal to the height and width         --> 
+    
+    height:300px;
+    width:400px;
+    position:absolute;
+    left:910px;               <!-- left all the way from the left 910 px           --> 
+}
+.a{
+    color:#11999E
+   border-radius:300px;
+    height:300px;
+    width:300px;
+    position:absolute;
+    left:610px;
+}
+.pappa{
+    
+    border-radius:300px;
+    
+    height:300px;
+    width:400px;
+    position:absolute;
+    left:910px;
+}
+.a{
+    color:#11999E;
+}
